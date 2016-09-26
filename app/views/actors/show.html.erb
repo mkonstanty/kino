@@ -1,0 +1,17 @@
+<p>
+  <b>Imię i nazwisko:</b><br/>
+  <%=h @actor.name %>
+</p>
+
+<p>
+  <b>Życiorys:</b><br/>
+  <%=h @actor.biography %>
+</p>
+
+<p>
+    <b>Występuje w:</b><br/>
+     <%= @actor.movies.collect {|movie| link_to movie.name, movie}*", " %>
+    
+</p>
+
+<%= link_to 'Back', actors_path %>

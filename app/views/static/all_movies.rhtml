@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Tytuł</th>
+    <th>Gatunek</th>
+    <th>Długość</th>
+    
+  </tr>
+
+<% for movie in @movies %>
+  <tr>
+    <td><%= link_to movie.name, movie %></td>
+    <td><%=h movie.description %></td>
+    <td><%=h movie.length %> min.</td>
+
+  </tr>
+<% end %>
+</table>

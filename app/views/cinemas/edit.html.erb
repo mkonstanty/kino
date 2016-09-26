@@ -1,0 +1,12 @@
+<h1>Editing cinema</h1>
+
+<% form_for(@cinema) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @cinema %> |
+<%= link_to 'Back', cinemas_path %>

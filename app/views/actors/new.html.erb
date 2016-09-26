@@ -1,0 +1,17 @@
+
+<% form_for(@actor) do |f| %>
+  <%= f.error_messages %>
+<p>Imię i nazwisko:
+ <%= f.text_field :name %>
+</p>
+
+<p>Biografia:
+<%= f.text_field :biography %>
+</p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Powrót', actors_path %>

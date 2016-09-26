@@ -1,0 +1,29 @@
+<p>
+  <b>Tytuł:</b><br/>
+  <%=h @movie.name %>
+</p>
+
+<p>
+  <b>Gatunek:</b><br/>
+  <%=h @movie.description %>
+</p>
+
+<p>
+  <b>Czas trwania (min):</b><br/>
+  <%=h @movie.length %>
+</p>
+
+<p>
+  <b>Występują</b><br/>
+  <%= @movie.actors.collect {|actor| link_to actor.name, actor}*", " %>
+</p>
+
+<center>
+<p>
+  <%#  if url_for_file_column('movie', 'image') %>
+    <%#= image_tag(url_for_file_column('movie', 'image')) %>
+  <%# end %>
+</p>
+</center>
+
+<%= link_to 'Back', movies_path %>

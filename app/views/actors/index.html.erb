@@ -1,0 +1,17 @@
+<div class="data_tables">
+<table>
+  <tr>
+    <th>Imię i nazwisko</th>
+    <th>Biografia</th>
+  </tr>
+
+<% for actor in @actors %>
+  <tr>
+    <td><%= link_to actor.name, actor %></td>
+    <td><%=h actor.biography %></td>
+    <td><%= link_to 'Usun', actor, :confirm => 'Czy jestes pewien?', :method => :delete %></td>
+ </tr>
+<% end %>
+</table>
+<%= link_to "Nowy aktor", new_actor_path %>
+</div>

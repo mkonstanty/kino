@@ -1,0 +1,21 @@
+
+<% form_for(@performance) do |f| %>
+  <%= f.error_messages %>
+<p>Kino:
+ <%= f.select :cinema_id, @cinemas.collect { |p| [p.name, p.id] } %>
+</p>
+
+<p>Film:
+ <%= f.select :movie_id, @movies.collect { |p| [p.name, p.id] }%>
+</p>
+
+<p>Data i godzina rozpoczęcia:
+<%= f.datetime_select :started_at %>
+</p>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', performances_path %>

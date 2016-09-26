@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Compromise
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20081103
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Super kino</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+    <%= javascript_include_tag :defaults %>
+    <#%= active_scaffold_includes %>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <h1><a href="#">Super kino</a></h1>
+        <p> najlepsze kino w mieście </p>
+      </div>
+    </div>
+    <!-- end #header -->
+    <div id="menu">
+      <ul>    
+        <% if @menu == 1%>
+            <li><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li class="first"><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li><%= link_to 'Filmy' , :controller => '/movies' %></li>
+            <li><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+	    <li><%= link_to 'Kina', :controller => '/cinemas' %></li>
+         <% elsif @menu == 2 %>
+            <li><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li><%= link_to 'Filmy', :controller => '/movies' %></li>
+            <li class="first"><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+            <li><%= link_to 'Kina', :controller => '/cinemas' %></li>
+         <% elsif @menu == 3 %>
+            <li class="first"><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li><%= link_to 'Filmy', :controller => '/movies' %></li>
+            <li><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+	    <li><%= link_to 'Kina', :controller => '/cinemas' %></li>
+        <% elsif @menu == 4 %>
+            <li><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li class="first"><%= link_to 'Filmy', :controller => '/movies' %></li>
+            <li><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+            <li><%= link_to 'Kina', :controller => '/cinemas' %></li>
+       <% elsif @menu ==5 %>
+	    <li><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li><%= link_to 'Filmy', :controller => '/movies' %></li>
+            <li><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+	    <li class="first"><%= link_to 'Kina', :controller => '/cinemas' %></li>           
+	<% else %>
+            <li><%= link_to "Strona główna", :controller => '/static' %></li>
+            <li><%= link_to 'Repertuar', :controller => '/performances' %></li>
+            <li><%= link_to 'Filmy', :controller => '/movies' %></li>
+            <li><%= link_to 'Aktorzy', :controller => '/actors' %></li>
+            <li><%= link_to 'Kina', :controller => '/cinemas' %></li> 
+	<% end %>
+      </ul>
+    </div>
+    <!-- end #menu -->
+    <div id="wrapper">
+      <div class="btm">
+        <div id="page">
+          <div id="page_inside">
+          <%= yield %>
+          </div>
+        </div>
+        <!-- end #page -->
+      </div>
+    </div>
+    <div id="footer">
+      <p>Copyright lala</p>
+    </div>
+    <!-- end #footer -->
+  </body>
+</html>
